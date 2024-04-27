@@ -29,7 +29,7 @@ function Login() {
                         </div>
                         <input id="Entrar" class="Entrar" type="button" value="Entrar" onclick="logar()"/>
                         <div className="register">
-                                <p>Não tenho uma conta: <Link to="/cadastro">Cadastrar-se</Link> </p>
+                                <p>Não tenho uma conta: <Link to="/singUp">Cadastrar-se</Link> </p>
                         </div>
                     </form>
                 </section>

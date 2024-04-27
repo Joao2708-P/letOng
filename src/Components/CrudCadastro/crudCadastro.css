@@ -140,6 +140,20 @@
 
 }
 
+.login-route  {
+    color: black;
+}
+
+.login-route a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-route a:hover {
+    text-decoration: underline;
+}
+
 @media screen  and (max-width: 1330px) {
     .form-image {
         display: none;
