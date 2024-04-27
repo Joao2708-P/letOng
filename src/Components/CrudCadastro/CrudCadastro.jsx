@@ -18,10 +18,6 @@ function Cadastro() {
                                 <div className="title">
                                     <h1>Cadastre-se</h1>
                                 </div>
-
-                                <div className="login-button">
-                                    <button><Link to='/login'>Entrar</Link></button>
-                                </div>
                             </div>
 
                             <div className="input-group">
@@ -55,6 +51,10 @@ function Cadastro() {
                                     <label  for="Confirmpassword">Confirme sua senha:</label>
                                     <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Digite novamente sua senha" required/>
                                 </div>
+                            </div>
+
+                            <div className='login-route'>
+                                <p>Já tem uma conta? <Link to="/login">Entre</Link></p>
                             </div>
 
                             <div className="continue-button">
