@@ -8,7 +8,6 @@ function Cadastro() {
         <div className='config'>
             <div className='body-config'>
                 <div className='container'>
-
                     <div className="form-image">
                         <img src={joelhosdepano}/>
                     </div>
