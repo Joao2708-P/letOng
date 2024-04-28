@@ -9,8 +9,8 @@ function Rotas() {
 
     return(
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="singUp" element={<CrudCadastro/>}/>
+            <Route path="home" element={<Home/>}/>
+            <Route path="/" element={<CrudCadastro/>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="lista" element={<ListaCadastrados/>}/>
         </Routes>

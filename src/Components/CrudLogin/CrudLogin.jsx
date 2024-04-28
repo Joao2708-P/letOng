@@ -7,7 +7,7 @@ function Login() {
         <div className='config'>
            <div className="content-body">
                 <section>
-                    <form action="">
+                    <form onSubmit={'/'}>
                         <h1>Tech Byte </h1>
                         <div className="linha"></div>
                         <h3>Login</h3>

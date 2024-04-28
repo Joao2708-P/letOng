@@ -1,14 +1,22 @@
 import './ListaCadastrados.css';
+import {getAllUsers} from '../../services/users/userService';
+import React, {useEffect, useState} from 'react';
 
 function ListaCadastrados() {
 
-    const users = [
-        { nome: 'lfreds', sobrenome: 'Futterkiste', email: 'paulo@gmail.com', telefone: 1914586997458 },
-        { nome: 'jsmith', sobrenome: 'Johnson', email: 'jsmith@example.com', telefone: 1234567890 },
-        { nome: 'mgonzalez', sobrenome: 'Gonzalez', email: 'mgonzalez@example.com', telefone: 9876543210 },
-        { nome: 'skumar', sobrenome: 'Kumar', email: 'skumar@example.com', telefone: 9192939495 }
-    ];
+        const [users, setUsers] = useState([]);
 
+        useEffect(() => {
+            // Aqui você chama a função para buscar os usuários
+            getAllUsers()
+                .then(users => {
+                    // Atualiza o estado com a lista de usuários retornada
+                    setUsers(users);
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar usuários:', error);
+            });
+        }, []);
     return(
 
         <div>
