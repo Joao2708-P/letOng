@@ -34,10 +34,10 @@ function ListaCadastrados() {
                         <tbody>
                             {users.map((user, index) => (
                                 <tr key={index}>
-                                    <td>{user.nome}</td>
-                                    <td>{user.sobrenome}</td>
+                                    <td>{user.firstName}</td>
+                                    <td>{user.lastName}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.telefone}</td>
+                                    <td>{user.phone}</td>
                                 </tr>
                             ))}
                         </tbody>

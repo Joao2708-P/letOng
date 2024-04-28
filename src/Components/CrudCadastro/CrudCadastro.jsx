@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import './crudCadastro.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { createUser } from '../../services/users/userService';
 import joelhosdepano from '../../assets/joelhosdepano.svg';
 
 function Cadastro() {
 
         const [formData, setFormData] = useState({
-            firstname: '',
-            lastname: '',
+            firstName: '',
+            lastName: '',
             email: '',
-            number: '',
+            phone: '',
             password: '',
             confirmPassword: ''
         });
+
+        const [isCreated, setIsCreated] = useState(false);
 
         const handleChange = (e) => {
             const { name, value } = e.target;
@@ -30,14 +32,21 @@ function Cadastro() {
                 return;
             }
             try {
+                console.log(formData)
                 await createUser(formData);
                 alert('Usuário cadastrado com sucesso!');
+                setIsCreated(true)
                 // Limpar os campos após o cadastro
             } catch (error) {
                 console.error('Erro ao cadastrar usuário:', error);
                 alert('Ocorreu um erro ao cadastrar o usuário. Por favor, tente novamente mais tarde.');
             }
         };
+
+        if(isCreated){
+            return <Navigate to='/lista'/>
+        }
+
     return(
         <div className='config'>
             <div className='body-config'>
@@ -57,13 +66,13 @@ function Cadastro() {
                             <div className="input-group">
 
                                 <div className="input-box">
-                                    <label  for="firstname">Primeiro nome:</label>
-                                    <input id="firstname" type="text" name="firstname" value={formData.firstname} onChange={handleChange} placeholder="Digite seu primeiro nome" required/>
+                                    <label  for="firstName">Primeiro nome:</label>
+                                    <input id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Digite seu primeiro nome" required/>
                                 </div>
 
                                 <div className="input-box">
-                                    <label  for="lastname">Sobrenome:</label>
-                                    <input id="lastname" type="text" name="lastname" value={formData.lastname} onChange={handleChange} placeholder="Digite seu sobrenome" required/>
+                                    <label  for="lastName">Sobrenome:</label>
+                                    <input id="lastName" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Digite seu sobrenome" required/>
                                 </div>
 
                                 <div className="input-box">
@@ -72,8 +81,8 @@ function Cadastro() {
                                  </div>
 
                                  <div className="input-box">
-                                    <label  for="number">Celular:</label>
-                                    <input id="number" type="tel" name="number" value={formData.number} onChange={handleChange} placeholder="(xx)xxxx-xxxx" required/>
+                                    <label  for="phone">Celular:</label>
+                                    <input id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="(xx)xxxx-xxxx" required/>
                                 </div>
 
                                 <div className="input-box">
